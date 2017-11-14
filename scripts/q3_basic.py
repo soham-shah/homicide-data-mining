@@ -7,9 +7,12 @@ import matplotlib.pyplot as plt
 dataArr = pd.read_csv("../data/database.csv")
 
 # remove these columns
-dataArr = (dataArr.drop(['Record ID', 'Agency Code','Agency Name','Agency Type','City', 'State', 'Year','Month', 'Incident', 'Crime Type', 'Victim Sex','Victim Age','Victim Race','Victim Ethnicity','Perpetrator Sex','Perpetrator Age','Perpetrator Race','Relationship','Weapon','Record Source'],axis=1))
+dataArr = (dataArr.drop(['Record ID', 'Agency Code','Agency Name','Agency Type','City', 'State', 'Year','Month', 'Incident', 'Crime Type', 'Victim Sex','Victim Age','Victim Race','Victim Ethnicity','Perpetrator Sex','Perpetrator Age','Perpetrator Race','Perpetrator Ethnicity','Relationship','Weapon','Record Source'],axis=1))
 
 # add 1 to every data entry since number given is # of additional victims/perps
-#print(dataArr.head(n=1))
-dataArr = dataArr[dataArr["Victim Count"]+1]
-#print(dataArr.head(n=1))
+
+dataArr["Victim Count"] = dataArr["Victim Count"]+1
+dataArr["Perpetrator Count"] = dataArr["Perpetrator Count"]+1
+#print(dataArr.head(n=10))
+
+
