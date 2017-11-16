@@ -13,9 +13,41 @@ dataArr = (dataArr.drop(['Record ID', 'Agency Code','Agency Name','Agency Type',
 
 dataArr["Victim Count"] = dataArr["Victim Count"]+1
 dataArr["Perpetrator Count"] = dataArr["Perpetrator Count"]+1
-num_vic = dataArr["Victim Count"].value_counts()
-num_perp = dataArr["Perpetrator Count"].value_counts()
 
+#--------Simple Analysis-------#
+num_vic = dataArr["Victim Count"].value_counts() #breakdown by num of vic
+num_perp = dataArr["Perpetrator Count"].value_counts() #breakdown by num of perps
+mean_vic = dataArr["Victim Count"].mean()
+mean_perp = dataArr["Perpetrator Count"].mean()
+std_vic = dataArr["Victim Count"].std()
+std_perp = dataArr["Perpetrator Count"].std()
+med_vic = dataArr["Victim Count"].median()
+med_perp = dataArr["Perpetrator Count"].median()
+q1_vic = dataArr["Victim Count"].quantile(0.25)
+q1_perp = dataArr["Perpetrator Count"].quantile(0.25)
+q3_vic = dataArr["Victim Count"].quantile(0.75)
+q3_perp = dataArr["Perpetrator Count"].quantile(0.75)
+iqr_vic = q3_vic - q1_vic
+iqr_perp = q3_perp - q1_perp
+
+print 'num victims= ',dataArr["Victim Count"].count()
+print 'num perpetrators= ',dataArr["Perpetrator Count"].count()
+print 'occ victims= ',dataArr["Victim Count"].value_counts()
+print 'occ perpetrators= ',dataArr["Perpetrator Count"].value_counts()
+print 'num perpetrators= ',num_perp
+print 'mean victims= ',mean_vic
+print 'mean perpetrators= ',mean_perp
+print 'std dev victims= ',std_vic
+print 'std dev perpetrators= ',std_perp
+print 'median victims= ',med_vic
+print 'median perpetrators= ',med_perp
+print 'Q1 victims= ',q1_vic
+print 'Q1 perpetrators= ',q1_perp
+print 'Q3 victims= ',q3_vic
+print 'Q3 perpetrators= ',q3_perp
+print 'IQR victims= ',iqr_vic
+print 'IQR perpetrators= ',iqr_perp
+#--------Count plot------------#
 x_pos = np.arange(len(num_vic))
 x_pos2 = np.arange(len(num_vic)-1)
 width = 0.25
