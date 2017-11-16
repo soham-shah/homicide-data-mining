@@ -16,7 +16,7 @@ dataArr = dataArr[dataArr["Relationship"] != "Unknown"]
 # get count of each uniqie thing in Relationship and sort
 grouped = dataArr.groupby("Relationship").size().reset_index()
 grouped = grouped.sort_values(0, ascending=False)
-# print(grouped)
+print(grouped)
 
 # plot the result
 y_pos = np.arange(len(grouped["Relationship"]))
