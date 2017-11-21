@@ -100,3 +100,30 @@ lift_rest2_vic_not_solved = (float(rest2_vic_not_solved[0])/total)/((float(not_s
 # chi_vic = (one_vic_solved[0]-e_one_solved)*(one_vic_solved[0]-e_one_solved)/e_one_solved +(one_vic_not_solved[0]-e_one_not_solved)*(one_vic_not_solved[0]-e_one_not_solved)/e_one_not_solved +(rest_vic_solved[0]-e_rest_solved)*(rest_vic_solved[0]-e_rest_solved)/e_rest_solved+(rest_vic_not_solved[0]-e_rest_not_solved)*(rest_vic_not_solved[0]-e_rest_not_solved)/e_rest_not_solved
 # print chi_vic
 # ---------------------------------------------------------------------------
+victim = 1
+crime = "Yes"
+num_vic = dataArr["Victim Count"].value_counts()
+found = dataArr.loc[(dataArr["Crime Solved"] == crime)]
+found2 = dataArr.loc[(dataArr["Crime Solved"] == "No")]
+#print year_state.head(n=1000)
+
+# get count of each unique thing in month and sort based on Month
+grouped = found.groupby("Victim Count").size().reset_index()
+grouped2 = found2.groupby("Victim Count").size().reset_index()
+print grouped
+print grouped2
+x_pos = np.arange(len(num_vic))
+x_pos2 = np.arange(len(num_vic)-1)
+width = 0.25
+fig = plt.figure()
+ax = fig.add_subplot(121)
+rects1 = ax.bar(x_pos, grouped[0], width, color='g')
+rects2 = ax.bar(x_pos2+width, grouped2[0], width, color='r')
+
+ax.set_ylabel('Bin Size')
+ax.set_xlabel('1 Victim and Crime Solved')
+ax.set_xticks(x_pos+width)
+ax.set_xticklabels(('1','2','3','4','5','6','7','8','9','10','11'))
+ax.legend((rects1[0], rects2[0]), ('Solved', 'Not Solved'))
+
+plt.show()
