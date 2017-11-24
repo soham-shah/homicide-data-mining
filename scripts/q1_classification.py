@@ -33,7 +33,6 @@ dataArr['Victim Race'] = dataArr['Victim Race'].map({'White': 0, 'Black': 1, 'As
 dataArr['Weapon'] = dataArr['Weapon'].map({'Handgun': 0, 'Knife': 1, 'Blunt Object': 2, 'Firearm': 3, 'Shotgun': 4, 'Rifle': 5, 'Strangulation': 6, 'Fire': 7, 'Suffocation': 8, 'Gun': 9, 'Drugs': 10, 'Drowning': 11, 'Explosives': 12, 'Poison': 13, 'Fall': 14})
 dataArr['Month'] = dataArr['Month'].map({'January': 0, 'February': 1, 'March': 2, 'April': 3, 'May': 4, 'June': 5, 'July': 6, 'August': 7, 'September': 8, 'October': 9, 'November': 10, 'December': 11})
 
-#print(dataArr)
 '''x1 = dataArr["Victim Age"]
 x2 = dataArr["Victim Sex"]
 x3 = dataArr["Perpetrator Age"]
@@ -72,6 +71,14 @@ print ("Accuracy for information gain decision tree is ", accuracy_score(y_test,
 #Accuracy for info gain prediction
 print ("Accuracy for gini decision tree is ", accuracy_score(y_test,y_pred_gini)*100)
 
+#any situation you want to try after traininging and testing
+print("Special sample/situation")
+sample = {'Month': [10], 'Victim Sex': [0],'Victim Age': [72], 'Victim Race': [2],'Weapon': [14]}
+sample_test = pd.DataFrame(sample)
+print(sample_test)
+sample_prediction = dt_entropy.predict(sample_test)
+print("Decision Tree prediction using information gain for special sample:", sample_prediction)
+
 #confusion matrix for information gain decision tree
 confusion_matrix_entropy = pd.DataFrame(
     confusion_matrix(y_test, y_pred_entropy),
@@ -93,4 +100,13 @@ print(confusion_matrix_entropy)
 #generates text file for the informationg ain decision tree in which you copy the contents and put into http://webgraphviz.com/ to generate graph of tree
 with open("../plots/info_gain_decision_tree.txt", "w") as f:
     f = tree.export_graphviz(dt_entropy, feature_names=x.columns.values,out_file=f)
+with open("../plots/info_gain_decision_tree.dot", "w") as f:
+    f = tree.export_graphviz(dt_entropy, feature_names=x.columns.values,out_file=f)
+
+
+#generates text file for the gini index decision tree in which you copy the contents and put into http://webgraphviz.com/ to generate graph of tree
+with open("../plots/gini_decision_tree.txt", "w") as f:
+    f = tree.export_graphviz(dt_gini, feature_names=x.columns.values,out_file=f)
+with open("../plots/gini_decision_tree.dot", "w") as f:
+    f = tree.export_graphviz(dt_gini, feature_names=x.columns.values,out_file=f)
 print("Done")
