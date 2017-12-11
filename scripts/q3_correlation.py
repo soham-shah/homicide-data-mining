@@ -121,27 +121,32 @@ lift_rest2_perp_not_solved = (float(rest2_perp_not_solved[0])/total)/((float(not
 # ---------------------------------------------------------------------------
 victim = 1
 crime = "Yes"
-num_vic = dataArr["Victim Count"].value_counts()
+num_vic = dataArr["Perpetrator Count"].value_counts()
 found = dataArr.loc[(dataArr["Crime Solved"] == crime)]
 found2 = dataArr.loc[(dataArr["Crime Solved"] == "No")]
 #print year_state.head(n=1000)
 
 # get count of each unique thing in month and sort based on Month
-grouped = found.groupby("Victim Count").size().reset_index()
-grouped2 = found2.groupby("Victim Count").size().reset_index()
-print grouped
+# grouped = found.groupby("Victim Count").size().reset_index()
+# grouped2 = found2.groupby("Victim Count").size().reset_index()
+grouped = found.groupby("Perpetrator Count").size().reset_index()
+grouped2 = found2.groupby("Perpetrator Count").size().reset_index()
+# print grouped
 print grouped[0]
-print grouped[0][0]
+print grouped2[0]
+# print grouped[0][9]
 # print grouped2
 x_pos = np.arange(len(num_vic))
 x_pos2 = np.arange(len(num_vic)-1)
 width = 0.25
 fig = plt.figure()
-for i in range(0,10):
+
+for i in range(0,9):
     sp = [521,522,523,524,525,526,527,528,529]
     ax = fig.add_subplot(5,2,i+1)
 # rects1 = ax.bar(x_pos, grouped[0], width, color='g')
 # rects2 = ax.bar(x_pos2+width, grouped2[0], width, color='r')
+
     ax.pie([grouped[0][i],grouped2[0][i]],labels=[grouped[0][i],grouped2[0][i]])
     string = 'Solved vs Unsolved'
     ax.set_title(i+1)
@@ -153,5 +158,5 @@ ax.legend(('Solved', 'Not Solved'),loc='upper center',
 # ax.set_xticklabels(('1','2','3','4','5','6','7','8','9','10','11'))
 # ax.legend((rects1[0], rects2[0]), ('Solved', 'Not Solved'))
 plt.tight_layout()
-plt.savefig('../plots/vic_crime_solved.png')
+# plt.savefig('../plots/vic_crime_solved.png')
 plt.show()
