@@ -59,7 +59,7 @@ print P1Yes
 print P1No
 # ----------------------------------------------------------------------------
 
-#BAYES: Classes- C1: solved, C2: not solved. X=(!1 Victim, !2 Perp)---------------
+#BAYES: Classes- C1: solved, C2: not solved. X=(!1 Victim, !1 Perp)---------------
 # P(crime solved = "yes")
 P_solved_yes = float(solved)/total
 # P(crime solved = "no")
