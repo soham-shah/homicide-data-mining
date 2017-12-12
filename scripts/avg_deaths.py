@@ -34,10 +34,12 @@ grouped = year_state.groupby("State").size().reset_index()
 
 #Get average over n years, this gives us number of deaths per year NOT ACCOUNTING FOR OUTLIER YEARS
 grouped[0] = grouped[0].div(len(year)).round(0)
+grouped = grouped.sort_values(0, ascending=False)
 
-#print (grouped)
+y_pos = np.arange(len(grouped['State']))
+plt.bar(y_pos, grouped[0])
 plt.title('Average Annual Deaths per State')
-plt.bar(grouped['State'],grouped[0])
+plt.xticks(y_pos, grouped["State"])
 plt.xticks(rotation='vertical')
 plt.subplots_adjust(bottom=0.20)
 plt.show()
