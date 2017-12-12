@@ -1,4 +1,5 @@
 # Question: Is there a correlation between homicide and time of year, location?
+# Homicides per month for a certain state and year
 
 import pandas as pd
 import numpy as np
@@ -42,5 +43,3 @@ plt.title("Homicides Per Month {}-{}".format(state,year))
 plt.tight_layout()
 plt.show()
 
-# Note, save your output to the plots folder. name it something
-#plt.savefig('../plots/month_1.png')
