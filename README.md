@@ -121,6 +121,6 @@ Within Scripts Folder:
 Within Plots Folder:
 All the plots that our scripts export or cropped plots
 
-Within Data Folder:
-Kaggle homicide dataset
-US Census Bureau dataset
+DATA:
+Kaggle homicide dataset - https://www.kaggle.com/murderaccountability/homicide-reports
+US Census Bureau dataset - https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?src=bkmk
