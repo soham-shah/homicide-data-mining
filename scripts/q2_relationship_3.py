@@ -37,4 +37,4 @@ print(grouped)
 # plt.tight_layout()
 
 # Note, save your output to the plots folder. name it something 
-# plt.savefig('../plots/q2_relationship_2.png')
+# plt.savefig('../plots/q2_relationship_3.png')

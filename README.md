@@ -45,33 +45,33 @@ Within Scripts Folder:
    
    *Output: "gini_decision_tree.dot", "gini_decision_tree.txt", "gini_decision_tree.png", "info_gain_decision_tree.dot", "info_gain_decision_tree.txt", "info_gain_decision_tree.png" in plots folder
 
-* "q2_all.py" _____
+* "q2_all.py" Run classification using different scikitlearn machine learning algorithms and plot how effective they are. 
    
-   *Output: ____
+   *Output: q2_allComp.png in plots folder
 
-* "q2_bayes.py" _____
+* "q2_bayes.py" Use scikitlearn to create a bayes classifier of the data
    
-   *Output: ____
+   *Output: Prints out distribution numbers to terminal
 
-* "q2_classification.py" _____
+* "q2_classification.py" Uses scikitlearn to create a decision tree from the data. 
    
-   *Output: ____
+   *Output: "q2_gini_decision_tree.dot", "q2_gini_decision_tree.txt", "q2_info_gain_decision_tree", "q2_info_gain_decision_tree.txt", in plots folder
 
-* "q2_correlation.py" _____
+* "q2_correlation.py" Use Pandas to generate colleration analysis for each column of the dataset. 
    
-   *Output: ____
+   *Output: Prints out correlation numbers to terminal
 
-* "q2_relationship_1.py" _____
+* "q2_relationship_1.py" Creates bar chart of the different types of relationships using matplotlib and pandas.
    
-   *Output: ____
+   *Output: q2_relationship_1.png in plots folder and Prints out distribution numbers
 
-* "q2_relationship_2.py" _____
+* "q2_relationship_2.py" Creates pie chart of the different types of relationships but merged into 3 buckets using matplotlib and pandas
    
-   *Output: ____
+   *Output: q2_relationship_2.png in plots folder and Prints out distribution numbers
 
-* "q2_relationship_3.py" _____
+* "q2_relationship_3.py" Creates bar chart of the relationships and victim age using matplotlib and pandas. 
    
-   *Output: ____
+   *Output: q2_relationship_2.png in plots folder and Prints out distribution numbers
 
 * "q3_basic.py" calculates and plots a histogram of ____
    
