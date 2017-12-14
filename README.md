@@ -17,17 +17,17 @@ Questions:
 
 Within Scripts Folder:
 
-* "avg_deaths.py" calculates the distribution of deaths per state
-    *Output: _____
+* "avg_deaths.py" calculates the distribution of homicides per state
+    *Output: Graph of total homicides submitted per state for a certain selection of years
 
-* "homicides_per_month_state.py" calculates ____
-    *Output: 
+* "homicides_per_month_state.py" calculates the average number of homicide cases reported
+    *Output: Graph of average number of homicide cases reported for a selection of states and years  
 
 * "month_1.py" calculates and plots a histogram of distribution of homicides per month from 1980-2014 in order of frequency  
     *Output: "month_2.png" in plots folder and Prints out distribution numbers
 
-* "most_homicides.py" calculates the distribution ______
-    *Output: _____
+* "most_homicides.py" calculates the distribution of homicides per state from 2010-2014 adjusted for population (every 10k people)
+    *Output: Bar chart of rate of homicides submitted per 10,000 people for every state from 2010-2014
 
 * "perpage_1.py" calculates  and plots a histogram of the distribution of the attribute Perpetrator Age
     *Output: "perpage.png" in plots folder and Prints out distribution numbers 
@@ -97,4 +97,5 @@ Within Plots Folder:
 All the plots that ours scripts export or cropped plots
 
 Within Data Folder:
-Our homicide dataset
+Kaggle homicide dataset
+US Census Bureau dataset
