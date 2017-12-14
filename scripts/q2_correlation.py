@@ -49,35 +49,12 @@ dataArr['Month'] = dataArr['Month'].map({'January': 0, 'February': 1, 'March': 2
 dataArr["Crime Solved"] = dataArr["Crime Solved"].map({"No":0,"Yes":1})
 print(dataArr.head(n=1))
 
-'''x1 = dataArr["Victim Age"]
-x2 = dataArr["Victim Sex"]
-x3 = dataArr["Perpetrator Age"]
-x4 = dataArr["Perpetrator Sex"]
-x5 = dataArr["Weapon"]
-y = dataArr["Crime Solved"]'''
-
-#X is array of attributes (Victim Age, Victim Sex, Perp Age, Perp Sex, Y is class label
-x = (dataArr.drop(['Relationship'],axis=1))
-y = dataArr["Relationship"]
-
-#Split into training set and testing set (test set is 30% whole set, training set is 70%)
-X_train, X_test, y_train, y_test = train_test_split( x, y, test_size = 0.3, random_state = 100)
+print("correlation of Relationship and Victim Age", dataArr["Relationship"].corr(dataArr["Victim Age"], method='pearson'))
+print("correlation of Relationship and Victim Sex", dataArr["Relationship"].corr(dataArr["Victim Sex"], method='pearson'))
+print("correlation of Relationship and Race", dataArr["Relationship"].corr(dataArr["Victim Race"], method='pearson'))
+print("correlation of Relationship and Weapon", dataArr["Relationship"].corr(dataArr["Weapon"], method='pearson'))
+print("correlation of Relationship and Month", dataArr["Relationship"].corr(dataArr["Month"], method='pearson'))
+print("correlation of Relationship and Crime Solved", dataArr["Relationship"].corr(dataArr["Crime Solved"], method='pearson'))
 
 
-rf_probas = RandomForestClassifier().fit(X_train, y_train).predict_proba(X_test)
-lr_probas = LogisticRegression().fit(X_train, y_train).predict_proba(X_test)
-nb_probas = GaussianNB().fit(X_train, y_train).predict_proba(X_test)
-sv_scores = LinearSVC().fit(X_train, y_train).decision_function(X_test)
 
-probas_list = [rf_probas, lr_probas, nb_probas, sv_scores]
-clf_names=['Random Forest',
-           'Logistic Regression',
-           'Gaussian Naive Bayes',
-           'Support Vector Machine']
-
-skplt.metrics.plot_calibration_curve(y_test,
-                                     probas_list=probas_list,
-                                     clf_names=clf_names,
-                                     n_bins=10)
-# plt.show()
-plt.savefig('../plots/q2_allComp.png')
