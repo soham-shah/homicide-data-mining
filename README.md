@@ -73,17 +73,17 @@ Within Scripts Folder:
    
    *Output: q2_relationship_2.png in plots folder and Prints out distribution numbers
 
-* "q3_basic.py" calculates and plots a histogram of ____
+* "q3_basic.py" calculates and plots a histogram of the number of cases with 1-11 victims/perpetrators.
    
-   *Output: "vic_perp_count_1.png" in plots folder
+   *Output: "vic_perp_count_1.png" in plots folder, prints out the distribution numbers.
 
-* "q3_classification.py" uses Bayes _____  and prints the _____ 
+* "q3_classification.py" uses Bayes classification and prints the probabilities.
    
-   *Output: Prints out ____
+   *Output: Prints out bayes classification numbers.
 
 * "q3_correlation.py" finds the correlation between the attributes Victim Count and Perpetrator Count
    
-   *Output: Prints out _____
+   *Output: Prints out vic_crime_solved.png (currently commented out) and the pie graphs as a visual for solved vs. unsolved for the 1-11 victims/perpetrators.
 
 * "relationship_1.py" calculates and plots a histogram of the distribution of the attribute Relationship
    
