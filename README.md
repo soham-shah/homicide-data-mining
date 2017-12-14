@@ -18,6 +18,7 @@ Questions:
 Within Scripts Folder:
 
 * "avg_deaths.py" calculates the distribution of homicides per state
+    
     *Output: Graph of total homicides submitted per state for a certain selection of years
 
 * "homicides_per_month_state.py" calculates the average number of homicide cases reported
