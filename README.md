@@ -119,7 +119,7 @@ Within Scripts Folder:
 
 
 Within Plots Folder:
-All the plots that ours scripts export or cropped plots
+All the plots that our scripts export or cropped plots
 
 Within Data Folder:
 Kaggle homicide dataset
